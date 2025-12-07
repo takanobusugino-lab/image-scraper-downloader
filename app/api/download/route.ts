@@ -71,7 +71,7 @@ export async function POST(req: Request): Promise<Response> {
   }
 
   const zipBuffer = zip.toBuffer();
-  return new Response(zipBuffer, {
+  return new Response(zipBuffer as unknown as BodyInit, {
     status: 200,
     headers: {
       "Content-Type": "application/zip",
